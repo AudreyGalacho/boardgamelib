@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/game_provider.dart';
 import 'detail_page.dart';
+import '../shared/layout/main_scaffold.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,9 +10,8 @@ class HomePage extends StatelessWidget {
     final provider = Provider.of<GameProvider>(context);
     final games = provider.games;
 
-    return Scaffold(
-      appBar: AppBar(title: Text("Jeux de plateau")),
-      body: Column(
+    return MainScaffold(
+      child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
